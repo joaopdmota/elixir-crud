@@ -10,6 +10,7 @@ defmodule SimpleServer.Application do
     children = [
       # Starts a worker by calling: SimpleServer.Worker.start_link(arg)
       # {SimpleServer.Worker, arg},
+      Friends.Repo,
       Plug.Adapters.Cowboy.child_spec(
         scheme: :http,
         plug: SimpleServer.Router,

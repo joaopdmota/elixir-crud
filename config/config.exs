@@ -2,6 +2,14 @@
 # and its dependencies with the aid of the Mix.Config module.
 use Mix.Config
 
+config :simple_server, Friends.Repo,
+  database: "friends_repo",
+  username: "postgres",
+  password: "postgres",
+  hostname: "localhost"
+
+config :simple_server, ecto_repos: [Friends.Repo]
+
 # This configuration is loaded before any dependency and is restricted
 # to this project. If another project depends on this project, this
 # file won't be loaded nor affect the parent project. For this reason,
